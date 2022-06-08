@@ -2,7 +2,7 @@
 
 O objetivo desse laboratório é configurar um ambiente psrs uso do AWS VPC Peering.
 
-![Nagios](/images/vpc-peering.png)
+![Nagios](/images/vpc-peering.drawio.png)
 
 Escopo:
 
