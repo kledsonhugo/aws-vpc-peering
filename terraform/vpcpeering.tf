@@ -13,32 +13,12 @@ resource "aws_vpc" "vpc20" {
     enable_dns_hostnames = "true"
 
     tags = {
-        Name = "vpc2"
+        Name = "vpc20"
     }
 }
 
-# VPC Peering
-resource "aws_vpc_peering_connection" "vpc_peering" {
-    peer_vpc_id   = aws_vpc.vpc20.id
-    vpc_id        = aws_vpc.vpc10.id
-    auto_accept   = true
-    
-    tags = {
-        Name = "vpc_peering"
-    }
 
-}
-
-# INTERNET GATEWAY
-resource "aws_internet_gateway" "igw_vpc10" {
-    vpc_id = aws_vpc.vpc10.id
-
-    tags = {
-        Name = "igw_vpc10"
-    }
-}
-
-# SUBNET
+# SUBNETS
 resource "aws_subnet" "sn_vpc10" {
     vpc_id            = aws_vpc.vpc10.id
     cidr_block        = "10.0.1.0/24"
@@ -58,6 +38,30 @@ resource "aws_subnet" "sn_vpc20" {
         Name = "sn_vpc20"
     }
 }
+
+
+# VPC PEERING
+resource "aws_vpc_peering_connection" "vpc_peering" {
+    peer_vpc_id   = aws_vpc.vpc20.id
+    vpc_id        = aws_vpc.vpc10.id
+    auto_accept   = true
+    
+    tags = {
+        Name = "vpc_peering"
+    }
+
+}
+
+
+# INTERNET GATEWAY
+resource "aws_internet_gateway" "igw_vpc10" {
+    vpc_id = aws_vpc.vpc10.id
+
+    tags = {
+        Name = "igw_vpc10"
+    }
+}
+
 
 # ROUTE TABLE
 resource "aws_route_table" "rt_vpc10" {
@@ -85,6 +89,7 @@ resource "aws_route_table" "rt_vpc20" {
         Name = "rt_vpc20"
     }
 }
+
 
 # SUBNET ASSOCIATION
 resource "aws_route_table_association" "rt_vpc10_To_sn_vpc10" {
