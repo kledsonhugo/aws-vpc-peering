@@ -74,7 +74,7 @@ resource "aws_route_table" "rt_vpc10" {
 }
 
 resource "aws_route_table" "rt_vpc20" {
-    vpc_id = aws_vpc.vpc1.id
+    vpc_id = aws_vpc.vpc10.id
 
     route {
         cidr_block = "10.0.0.0/16"
