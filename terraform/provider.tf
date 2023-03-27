@@ -1,7 +1,7 @@
 # PROVIDER
 terraform {
 
-  required_version = "~> 1.4.0"
+  required_version = "~> 1.4"
 
   required_providers {
     aws = {
@@ -11,9 +11,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "tf-state-vpcpeering-bucket"
+    bucket         = "tf-vpc-peering-state-v1"
     key            = "terraform.tfstate"
-    dynamodb_table = "tf-state-vpcpeering-table"
+    dynamodb_table = "tf-vpc-peering-state-v1"
     region         = "us-east-1"
   }
 

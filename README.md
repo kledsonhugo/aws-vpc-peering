@@ -1,11 +1,14 @@
 # Laboratório de uso do AWS VPC Peering Core
 
-O objetivo desse laboratório é configurar um ambiente psrs uso do AWS VPC Peering.
+O objetivo desse laboratório é configurar um ambiente para uso do AWS VPC Peering.
 
-![Nagios](/images/vpc-peering.drawio.png)
+Provisionamento de uma infraestrutura simples com duas VPC´s roteando tráfego entre elas através do AWS VPC Peering.
 
-Escopo:
+Referências
+- [What is VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
 
-* Provisionamento de uma infraestrutura simples com duas VPC´s roteando tráfego entre elas através do AWS VPC Peering.
+<br>
 
-  - ref: [https://assets.nagios.com/downloads/nagioscore/docs/nagioscore/4/en/quickstart.html](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
+## **Arquitetura alvo**
+
+![VPC Peering](/images/vpc-peering.drawio.png)
